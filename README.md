@@ -7,11 +7,11 @@ Python programs to process the Twitter data:
 3. Scrape Twitter user ID's follower IDs from Twitter API
 
 ## What's Included
-1 Parse JSON Tweets: tweets_reader.py__
-2 Expand short urls: parse_url.py__
-3 Extract user ID's follower IDs: extract_twitter_followers.py__
-4 Keep track of extraction row num: extract_check_row_num.py__
-5 Scrape Twitter follower IDs: scrape_twitter_followers.py__
+1. Parse JSON Tweets: tweets_reader.py
+2. Expand short urls: parse_url.py
+3. Extract user ID's follower IDs: extract_twitter_followers.py
+4. Keep track of extraction row num: extract_check_row_num.py
+5. Scrape Twitter follower IDs: scrape_twitter_followers.py
 
 ## Built With
 * [Python](https://www.python.org/) - All Preprocessing Scripts.
@@ -28,7 +28,7 @@ Python programs to process the Twitter data:
 **Speed:**
 The python program ran faster in the beginning few rows of userID (smaller userIDs) most likely because there were fewer userIDs (a smaller network of Twitter users in the beginning of 2009) so it was much faster to retrieve the followers of these userIDs. On the contrary, the program ran very slowly, with userID matched only between large row intervals. FollowerIDs had to be extracted in smaller chunks (by about 1,000,000 interval each time per 15-20 min) as the userIDs at the back of the file were larger and there were more twitter accounts to sieve through (perhaps these twitter accounts also had more followers). For faster file processing, I have split the 26 GB file into 3 individual CSV batches.
 
-**Missing userIDs in the CSV file
+**Missing userIDs in the CSV file**
 The Twitter_RV.Net file (userIDs sorted in ascending order) only contained twitter users up to July 2009 with the last userID - 61578414. A total of 1,468,365,182 rows of twitter social graph data was run to extract the followerIDs. Some userID data were missing from the Twitter_RV.Net file although their account creation date didn’t differ from those which were extracted. I suspect it might possibly be due to private/deactivated account during the time of scraping in 2009 so the followerIDs of these userIDs were inaccessible.
 
 ### Scraped Twitter Users
