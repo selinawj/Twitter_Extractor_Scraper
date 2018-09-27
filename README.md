@@ -21,6 +21,14 @@ Python programs to process the Twitter data:
 * [Tweepy](http://docs.tweepy.org/en/v3.5.0/) - A Python library for accessing the Twitter API.
 * [Pandas](https://pandas.pydata.org/) - Used this library for manipulating and storing the resulting data in a dataframe structure.
 
+## A Useful Unix & Linux Command Line Function
+This prints out the total number of lines in the data file.
+```
+wc -l <filename>
+```
+## Twitter User Page by user_id
+https://twitter.com/intent/user?user_id=14868835
+
 ## Pre-processing Insights
 ### Extracted Twitter Users
 **Process:** In ascending user ID number, slice and extract follower IDs in chunks from the large data file. The dictionaryArray stores multiple userID dictionaries for faster access & update. Ref: [{userID1: f1, f2, ...}, {userID2: ...}]. If the userID is already in the dictionaryArray, append follower IDs from CSV; if the userID is not in the dictionaryArray, create a new dictionary with userID as the key and append the new dictionary to the array. Once all the data from the CSV has been stored in the dictionaryArray, read in the reference file, lookup userID by rows and loop through to find the corresponding follower IDs.
